@@ -68,7 +68,7 @@
 <link href="/blog-zh-Hans/css/main.css?v=5.0.1" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="Hexo, NexT" />
+  <meta name="keywords" content="saliency detection,computer vision," />
 
 
 
@@ -84,19 +84,16 @@
 
 
 
-<meta name="description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub.
-Quick">
+<meta name="description" content="摘要：对RACV2016的第一个主题报告(Separating the Wheat from the Chaff in Visual Data)进行总结，谈谈自己对显著性的新认识，最后谈谈深度学习和传统方法的选择">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Hello World">
-<meta property="og:url" content="http://baidut.github.io/2016/10/06/hello-world/index.html">
+<meta property="og:title" content="A Revisit of Saliency">
+<meta property="og:url" content="http://baidut.github.io/2016/09/27/a-revisit-of-saliency/index.html">
 <meta property="og:site_name" content="BitBlog">
-<meta property="og:description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub.
-Quick">
-<meta property="og:updated_time" content="2016-10-06T03:16:07.976Z">
+<meta property="og:description" content="摘要：对RACV2016的第一个主题报告(Separating the Wheat from the Chaff in Visual Data)进行总结，谈谈自己对显著性的新认识，最后谈谈深度学习和传统方法的选择">
+<meta property="og:updated_time" content="2016-10-06T07:08:43.553Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Hello World">
-<meta name="twitter:description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub.
-Quick">
+<meta name="twitter:title" content="A Revisit of Saliency">
+<meta name="twitter:description" content="摘要：对RACV2016的第一个主题报告(Separating the Wheat from the Chaff in Visual Data)进行总结，谈谈自己对显著性的新认识，最后谈谈深度学习和传统方法的选择">
 
 
 
@@ -117,9 +114,9 @@ Quick">
 
 
 
-  <link rel="canonical" href="http://baidut.github.io/2016/10/06/hello-world/"/>
+  <link rel="canonical" href="http://baidut.github.io/2016/09/27/a-revisit-of-saliency/"/>
 
-  <title> Hello World | BitBlog </title>
+  <title> A Revisit of Saliency | BitBlog </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -249,7 +246,7 @@ Quick">
             
             
               
-                Hello World
+                A Revisit of Saliency
               
             
           </h1>
@@ -261,19 +258,38 @@ Quick">
               <i class="fa fa-calendar-o"></i>
             </span>
             <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-10-06T11:16:07+08:00" content="2016-10-06">
-              2016-10-06
+            <time itemprop="dateCreated" datetime="2016-09-27T00:00:00+08:00" content="2016-09-27">
+              2016-09-27
             </time>
           </span>
 
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/blog-zh-Hans/categories/RACV2016/" itemprop="url" rel="index">
+                    <span itemprop="name">RACV2016</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
           
 
           
             
               <span class="post-comments-count">
                 &nbsp; | &nbsp;
-                <a href="/blog-zh-Hans/2016/10/06/hello-world/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/10/06/hello-world/" itemprop="commentsCount"></span>
+                <a href="/blog-zh-Hans/2016/09/27/a-revisit-of-saliency/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/09/27/a-revisit-of-saliency/" itemprop="commentsCount"></span>
                 </a>
               </span>
             
@@ -296,15 +312,34 @@ Quick">
       
 
       
-        <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="external">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="external">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="external">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="external">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo new <span class="string">"My New Post"</span></div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="external">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo server</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="external">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo generate</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="external">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo deploy</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="external">Deployment</a></p>
+        <p>摘要：对RACV2016的第一个主题报告(Separating the Wheat from the Chaff in Visual Data)进行总结，谈谈自己对显著性的新认识，最后谈谈深度学习和传统方法的选择</p>
+<a id="more"></a>
+<h2 id="Separating-the-Wheat-from-the-Chaff-in-Visual-Data"><a href="#Separating-the-Wheat-from-the-Chaff-in-Visual-Data" class="headerlink" title="Separating the Wheat from the Chaff in Visual Data"></a>Separating the Wheat from the Chaff in Visual Data</h2><p>作为RACV2016第一位特邀讲者，Lihi Zelnik-Manor 的报告探讨视觉数据的筛选问题。报告的题目非常有意思，通俗易懂。</p>
+<ul>
+<li>问题：数据快速增长，但处理资源有限</li>
+<li>思考：可否先筛选出可能有用的，再进行处理</li>
+<li>机会：数据的有效性是稀疏的，绝大多数数据都是无用的，不仅浪费处理资源，还可能带来干扰。</li>
+<li>相关工作：图像预处理中的ROI选择，数据处理前的清洗，图像显著性检测等。</li>
+</ul>
+<p>做数据筛选虽然可能漏掉有用的信息，但绝大多数情况下提升了系统的效率。Lihi 通过几个实验和观众交互，有力地说明了视觉焦点和注意力盲区的存在。一个有效的系统应当优先处理最有可能有用的数据，我们人可以快速地把注意力集中到图像中信息丰富的区域，机器也需要有一套类似人眼的选择机制来应对不断增长的数据。</p>
+<p>目前这个世界绝大多数的比特都在存储图像或者视频数据，面对庞大的数据，我们需要先进行筛选再做后续处理。<br>Lihi 的工作从两个层次对视觉数据进行筛选:</p>
+<ul>
+<li>Find single best view? 对于同一个场景不同视角的图片，选取一个包含最优的视角的图片。</li>
+<li>What’s important? 将图片中的重要的事物分割出来。</li>
+</ul>
+<p>对于第一个层次，我们需要明确什么是好的视角。所谓不好的视角，就是没有区分性，容易造成歧义的视角。<br>而对于第二个层次，重要事物的分割就是显著性检测问题。</p>
+<p>Lihi 详细地综述了显著性检测的发展，从传统的方法到近期结合深度学习的方法，通过runtime vs. accuracy<br>二维平面上点的坐标变化直观地表达了这一领域的进展。</p>
+<p>Lihi 还讲了图像显著性检测的一个时间轴上的扩展——视频显著性检测。从图像到视频有一些值得注意的地方：</p>
+<ul>
+<li>视频和我们所处的真实场景不同：在真实环境中，我们倾向于追踪动的物体；但在视频中，由于相机运动的存在，且相机常常跟随焦点物体，我们的焦点往往是静止的。我们找的不是运动物体，而是unique motion。仅考虑motion不能解决问题，视频显著性不是仅在图像上添加动作信息那么简单。</li>
+<li>人的视觉只关注一个点。对于图像显著点检测，我们可能给出多个答案，因为不同的人的关注点可能会有差异；但对于视频来说，大多数人的观察焦点是一致的，在一个精心制作的视频中，导演可以把握观众的视觉焦点从一张脸转移到另一张脸，但都仅仅限于一张脸 (focus just on face)。</li>
+<li>视频中的焦点是跳动的，在视频显著点检测中，我们需要对视觉焦点的切换进行建模。</li>
+</ul>
+<h2 id="Saliency-Detection-Information-Theory-Perspective"><a href="#Saliency-Detection-Information-Theory-Perspective" class="headerlink" title="Saliency Detection: Information Theory Perspective"></a>Saliency Detection: Information Theory Perspective</h2><p>通过该主题报告，我对显著性检测有了新的认识。报告中说了很多很细节的东西，我认为这里面有着非常简单的原理。我们应当从信息论的角度认识显著性检测。</p>
+<p>信息爆炸式的增长，有效的处理机应当优先处理信息量大的数据。而在图像数据中，信息量的分布是不均匀的。<br>对于常见的天空，草原这些出现概率非常大的事物，给我们带来的信息量很小，而图片上的文字或者人脸这些高度个性化的数据则拥有很大的信息量。所以我们的视觉会聚焦于这些独特的事物上。</p>
+<p>计算机在有先验知识储备的情况下，分析图像上的视觉模式，找出其中最罕见的区域（比如草丛中的花，天空中的鸟）就是概率小的区域，就是显著性区域。小概率对应大信息，所以要找罕见的区域。</p>
+<p>那么对于一个局部的区域，我们如何评估它的显著性呢？只需要看它和四周的差异：差异小，就是普遍的模式，信息量小；差异大，就是有着独特的模式，信息量大。显著，就是突出，就是与众不同。</p>
+<h2 id="Deep-Learning-or-Traditional-Methods"><a href="#Deep-Learning-or-Traditional-Methods" class="headerlink" title="Deep Learning or Traditional Methods"></a>Deep Learning or Traditional Methods</h2><p>在提问环节，有人问到：最近深度学习如此火热，是否应当转向深度学习，不再研究传统方法。<br>Lihi 的回答是对于深度学习的理解是非常有限的，而且深度学习尚不能够帮助我们理解问题，我们希望深度学习和传统方法结合起来，把 what we have known 融入 smart Deep Learning。</p>
 
       
     </div>
@@ -325,18 +360,26 @@ Quick">
 
     <footer class="post-footer">
       
+        <div class="post-tags">
+          
+            <a href="/blog-zh-Hans/tags/saliency-detection/" rel="tag">#saliency detection</a>
+          
+            <a href="/blog-zh-Hans/tags/computer-vision/" rel="tag">#computer vision</a>
+          
+        </div>
+      
 
       
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/blog-zh-Hans/2016/09/27/a-revisit-of-saliency/" rel="next" title="A Revisit of Saliency">
-                <i class="fa fa-chevron-left"></i> A Revisit of Saliency
-              </a>
-            
           </div>
 
           <div class="post-nav-prev post-nav-item">
+            
+              <a href="/blog-zh-Hans/2016/10/06/hello-world/" rel="prev" title="Hello World">
+                Hello World <i class="fa fa-chevron-right"></i>
+              </a>
             
           </div>
         </div>
@@ -362,8 +405,8 @@ Quick">
           
   <div class="comments" id="comments">
     
-      <div class="ds-thread" data-thread-key="2016/10/06/hello-world/"
-           data-title="Hello World" data-url="http://baidut.github.io/blog-zh-Hans/2016/10/06/hello-world/">
+      <div class="ds-thread" data-thread-key="2016/09/27/a-revisit-of-saliency/"
+           data-title="A Revisit of Saliency" data-url="http://baidut.github.io/blog-zh-Hans/2016/09/27/a-revisit-of-saliency/">
       </div>
     
   </div>
@@ -454,7 +497,7 @@ Quick">
               
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Quick-Start"><span class="nav-number">1.</span> <span class="nav-text">Quick Start</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Create-a-new-post"><span class="nav-number">1.1.</span> <span class="nav-text">Create a new post</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Run-server"><span class="nav-number">1.2.</span> <span class="nav-text">Run server</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Generate-static-files"><span class="nav-number">1.3.</span> <span class="nav-text">Generate static files</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Deploy-to-remote-sites"><span class="nav-number">1.4.</span> <span class="nav-text">Deploy to remote sites</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Separating-the-Wheat-from-the-Chaff-in-Visual-Data"><span class="nav-number">1.</span> <span class="nav-text">Separating the Wheat from the Chaff in Visual Data</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Saliency-Detection-Information-Theory-Perspective"><span class="nav-number">2.</span> <span class="nav-text">Saliency Detection: Information Theory Perspective</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Deep-Learning-or-Traditional-Methods"><span class="nav-number">3.</span> <span class="nav-text">Deep Learning or Traditional Methods</span></a></li></ol></div>
             
           </div>
         </section>
